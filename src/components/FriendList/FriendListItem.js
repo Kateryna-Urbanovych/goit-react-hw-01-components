@@ -1,16 +1,20 @@
 import PropTypes from 'prop-types';
+import s from './FriendListItem.module.css';
 
 function FriendListItem({ avatar, name, isOnline }) {
     return (
-        <li className="item">
-            <span className="status">{isOnline ? 'online' : 'offline'}</span>
+        <li className={s.item}>
+            <span
+                className={s.status}
+                style={{ backgroundColor: isOnline ? 'green' : 'red' }}
+            ></span>
             <img
-                className="avatar"
+                className={s.avatar}
                 src={avatar}
                 alt="Аватар {name}"
                 width="48"
             />
-            <p className="name">{name}</p>
+            <p className={s.name}>{name}</p>
         </li>
     );
 }
